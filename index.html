@@ -1,386 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jatin Kumar | SEO & Digital Marketing Portfolio</title>
-  <meta name="description" content="Portfolio of Jatin Kumar – SEO, digital marketing, content strategy and e-commerce growth. Projects, skills and contact details." />
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1b2f;
-      --text:#e9eef7;
-      --muted:#b7c0d1;
-      --line:rgba(255,255,255,.10);
-      --brand:#5eead4;
-      --brand2:#60a5fa;
-      --shadow: 0 14px 40px rgba(0,0,0,.35);
-      --radius:18px;
-      --max: 1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(96,165,250,.18), transparent 60%),
-                  radial-gradient(900px 500px at 85% 25%, rgba(94,234,212,.14), transparent 55%),
-                  linear-gradient(180deg, #070c16 0%, var(--bg) 60%, #070c16 100%);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px;}
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background: rgba(7,12,22,.55);
-      border-bottom:1px solid var(--line);
-      padding:14px 18px;
-      margin: -28px -18px 24px;
-    }
-    .brand{
-      display:flex; gap:10px; align-items:center; font-weight:700; letter-spacing:.2px;
-    }
-    .dot{
-      width:12px; height:12px; border-radius:99px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 0 0 4px rgba(96,165,250,.12);
-    }
-    .navlinks{
-      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
-      font-size:14px; color:var(--muted);
-    }
-    .navlinks a{padding:7px 10px; border-radius:12px;}
-    .navlinks a:hover{background: rgba(255,255,255,.06); color:var(--text)}
-    .hero{
-      display:grid; gap:18px;
-      grid-template-columns: 1.3fr .7fr;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .nav{position:relative; top:auto}
-    }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .heroMain{padding:26px;}
-    .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:6px 12px; border-radius:999px;
-      border:1px solid rgba(94,234,212,.35);
-      background: rgba(94,234,212,.08);
-      color: #c8fff6;
-      font-size:13px;
-    }
-    h1{margin:14px 0 10px; font-size:42px; line-height:1.1; letter-spacing:-.8px;}
-    @media (max-width: 520px){h1{font-size:34px}}
-    .sub{
-      color:var(--muted);
-      font-size:16px;
-      max-width: 62ch;
-    }
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:11px 14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-      font-weight:600;
-      font-size:14px;
-    }
-    .btn:hover{background: rgba(255,255,255,.08)}
-    .btnPrimary{
-      border-color: rgba(96,165,250,.45);
-      background: linear-gradient(135deg, rgba(96,165,250,.22), rgba(94,234,212,.16));
-    }
-    .side{padding:22px;}
-    .miniTitle{font-weight:700; margin:0 0 10px; font-size:14px; color:#dfe7f7}
-    .pillRow{display:flex; gap:10px; flex-wrap:wrap;}
-    .pill{
-      font-size:13px; color:var(--muted);
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      padding:8px 10px;
-      border-radius:999px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-      margin-top:18px;
-    }
-    .col6{grid-column: span 6;}
-    .col4{grid-column: span 4;}
-    .col8{grid-column: span 8;}
-    .col12{grid-column: span 12;}
-    @media (max-width: 900px){
-      .col6,.col4,.col8{grid-column: span 12;}
-    }
-
-    .section{margin-top:22px;}
-    .sectionHeader{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;
-      margin: 8px 0 10px;
-    }
-    .sectionHeader h2{margin:0; font-size:22px; letter-spacing:-.3px;}
-    .hint{color:var(--muted); font-size:13px}
-    .box{padding:18px;}
-    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
-    .list li{margin:6px 0}
-
-    .proj{
-      padding:18px;
-      display:flex; flex-direction:column; gap:10px;
-      min-height: 190px;
-    }
-    .tagRow{display:flex; gap:8px; flex-wrap:wrap}
-    .tag{
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color: #d9e3f7;
-      background: rgba(255,255,255,.03);
-    }
-    .proj h3{margin:2px 0 0; font-size:18px}
-    .proj p{margin:0; color:var(--muted)}
-    .metric{
-      margin-top:auto;
-      border-top:1px solid var(--line);
-      padding-top:10px;
-      display:flex; gap:10px; flex-wrap:wrap;
-      color:#d8fdf7;
-      font-weight:600;
-      font-size:13px;
-    }
-    .metric span{
-      color:var(--muted);
-      font-weight:600;
-    }
-
-    .footer{
-      margin-top:26px;
-      padding:18px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-      font-size:13px;
-      display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap;
-    }
-    .smallLink{color:#dfe7f7; text-decoration:underline; text-decoration-color: rgba(96,165,250,.35);}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jatin Kumar | SEO & Digital Marketing</title>
+  <meta name="description" content="SEO & Digital Marketing portfolio: on-page, technical SEO, Shopify/WordPress SEO, content optimization, and reporting." />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
-  <div class="nav">
-    <div class="brand">
-      <span class="dot"></span>
-      <span>Jatin Kumar</span>
-    </div>
-    <div class="navlinks">
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#results">Results</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#home">
+        <span class="brand__dot"></span>
+        <span class="brand__name">Jatin Kumar</span>
+      </a>
 
-  <div class="wrap">
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#results">Results</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
     <!-- HERO -->
-    <div class="hero">
-      <div class="card heroMain">
-        <div class="kicker">SEO • Digital Marketing • E-commerce Growth</div>
-        <h1>Jatin Kumar</h1>
-        <p class="sub">
-          I help businesses improve search visibility, clean up technical SEO issues, and grow traffic with practical content and on-page optimization.
-          I build simple systems that are easy to maintain (not “SEO magic”, just solid work).
-        </p>
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__left">
+          <p class="pill">SEO • Digital Marketing • E-commerce Growth</p>
+          <h1>SEO work that is clean, practical, and easy to measure.</h1>
+          <p class="lead">
+            I help websites improve search visibility by fixing technical issues, optimizing pages, and building a clear content structure.
+            No tricks—just solid execution and clean reporting.
+          </p>
 
-        <div class="ctaRow">
-          <!-- Replace with your real links -->
-          <a class="btn btnPrimary" href="#contact">Contact Me</a>
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn" href="mailto:yourmail@example.com">Email</a>
-          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <div class="btnrow">
+            <a class="btn btn--primary" href="#contact">Contact</a>
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          </div>
+
+          <div class="mini">
+            <span>Tools:</span>
+            <span class="tag">Google Search Console</span>
+            <span class="tag">Google Analytics</span>
+            <span class="tag">Ahrefs</span>
+            <span class="tag">Screaming Frog</span>
+            <span class="tag">Rank Math</span>
+          </div>
+        </div>
+
+        <div class="hero__right card">
+          <h3 class="card__title">Quick Summary</h3>
+          <ul class="list">
+            <li>Technical SEO: indexing, sitemaps, coverage fixes</li>
+            <li>On-page SEO: titles/meta, headings, internal linking</li>
+            <li>Content SEO: structure, refresh, intent matching</li>
+            <li>Shopify + WordPress: product/category SEO</li>
+            <li>Backlink review: spam patterns + clean-up planning</li>
+          </ul>
+
+          <div class="split">
+            <div>
+              <p class="muted">Availability</p>
+              <p><strong>SEO Executive / Analyst</strong></p>
+              <p><strong>Digital Marketing Executive</strong></p>
+            </div>
+            <div>
+              <p class="muted">Location</p>
+              <p><strong>India</strong> (Remote/Hybrid)</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="card side">
-        <p class="miniTitle">Core Focus</p>
-        <div class="pillRow">
-          <span class="pill">On-page SEO</span>
-          <span class="pill">Technical SEO</span>
-          <span class="pill">Content Optimization</span>
-          <span class="pill">Shopify SEO</span>
-          <span class="pill">WordPress SEO</span>
-          <span class="pill">Link Clean-up</span>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>About</h2>
+          <p class="muted">Short, recruiter-friendly summary.</p>
         </div>
 
-        <div style="height:14px"></div>
+        <div class="grid2">
+          <div class="card">
+            <h3 class="card__title">Profile</h3>
+            <p>
+              I’m an SEO and digital marketing professional focused on execution: fixing site foundations first (indexing, crawlability,
+              on-page basics), then scaling content and improvements page-by-page.
+            </p>
+            <p>
+              I prefer simple systems that teams can maintain: clear checklists, clean page templates, and reporting that shows progress.
+            </p>
+          </div>
 
-        <p class="miniTitle">Tools I use</p>
-        <div class="pillRow">
-          <span class="pill">Google Search Console</span>
-          <span class="pill">Google Analytics</span>
-          <span class="pill">Ahrefs</span>
-          <span class="pill">Screaming Frog</span>
-          <span class="pill">Rank Math</span>
-          <span class="pill">Excel/Sheets</span>
+          <div class="card">
+            <h3 class="card__title">Experience & Education (add your details)</h3>
+            <ul class="list">
+              <li><strong>Job Title – Company</strong> (Month Year – Month Year): 1–2 key points</li>
+              <li><strong>Job Title – Company</strong> (Month Year – Month Year): 1–2 key points</li>
+              <li><strong>Education</strong>: Degree / Institute / Year</li>
+              <li><strong>Certifications</strong> (optional): e.g., Google / HubSpot / etc.</li>
+            </ul>
+            <p class="muted small">Tip: keep this section short. You can add full details in the Resume PDF.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- SKILLS + ABOUT -->
-    <div class="grid section" id="skills">
-      <div class="card box col6">
-        <div class="sectionHeader">
+    <!-- SKILLS -->
+    <section id="skills" class="section section--alt">
+      <div class="wrap">
+        <div class="section__head">
           <h2>Skills</h2>
-          <div class="hint">Simple, practical, measurable</div>
+          <p class="muted">What I can do end-to-end.</p>
         </div>
-        <ul class="list">
-          <li><b>Technical SEO:</b> indexing, sitemaps, crawl fixes, internal linking, duplicate content checks</li>
-          <li><b>On-page SEO:</b> titles, meta descriptions, headings, topical structure, schema basics</li>
-          <li><b>Content SEO:</b> keyword mapping, content refresh, intent matching, content briefs</li>
-          <li><b>E-commerce SEO:</b> product page SEO, collections/category structure, SEO-friendly handles</li>
-          <li><b>Reporting:</b> GSC performance tracking, simple dashboards, action-based insights</li>
-        </ul>
-      </div>
 
-      <div class="card box col6">
-        <div class="sectionHeader">
-          <h2>Quick Profile</h2>
-          <div class="hint">What companies should know</div>
+        <div class="grid3">
+          <div class="card">
+            <h3 class="card__title">Technical SEO</h3>
+            <ul class="list">
+              <li>Indexing & sitemap checks</li>
+              <li>Coverage issues & crawl fixes</li>
+              <li>Internal linking structure</li>
+              <li>Duplicate/thin content review</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">On-page SEO</h3>
+            <ul class="list">
+              <li>Titles & meta descriptions</li>
+              <li>Heading structure (H1–H3)</li>
+              <li>Content cleanup + intent matching</li>
+              <li>Basic schema awareness</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">E-commerce SEO</h3>
+            <ul class="list">
+              <li>Shopify product SEO</li>
+              <li>Collections/category structure</li>
+              <li>SEO-friendly URL handles</li>
+              <li>Content blocks for conversion</li>
+            </ul>
+          </div>
         </div>
-        <ul class="list">
-          <li>I focus on clean execution: fix the foundation, then scale content.</li>
-          <li>I document work so teams can continue without dependency.</li>
-          <li>Comfortable with both Shopify and WordPress environments.</li>
-          <li>I avoid spam links and risky shortcuts (long-term brand safety matters).</li>
-        </ul>
       </div>
-    </div>
+    </section>
 
     <!-- PROJECTS -->
-    <div class="section" id="projects">
-      <div class="sectionHeader">
-        <h2>Projects</h2>
-        <div class="hint">Replace placeholders with your real details</div>
-      </div>
-
-      <div class="grid">
-        <div class="card proj col4">
-          <div class="tagRow">
-            <span class="tag">Shopify</span><span class="tag">SEO</span><span class="tag">E-commerce</span>
-          </div>
-          <h3>Cupsgalore (SEO Improvements)</h3>
-          <p>
-            Worked on product page SEO and structure. Improved titles/meta, fixed sitemap/coverage alignment,
-            and created a clean content direction for ongoing SEO.
-          </p>
-          <div class="metric">
-            <div><span>Focus:</span> Product SEO + Indexing</div>
-          </div>
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Projects</h2>
+          <p class="muted">Real work examples (add screenshots if you want).</p>
         </div>
 
-        <div class="card proj col4">
-          <div class="tagRow">
-            <span class="tag">WordPress</span><span class="tag">RankMath</span><span class="tag">Content</span>
+        <div class="grid3">
+          <div class="card">
+            <p class="pill pill--small">Shopify • SEO</p>
+            <h3 class="card__title">Cupsgalore (SEO Improvements)</h3>
+            <p>Product page SEO, title/meta improvements, indexing alignment, and sitemap/coverage consistency.</p>
+            <p class="muted small"><strong>Focus:</strong> Product SEO + Indexing</p>
           </div>
-          <h3>Fusion Certification (Content SEO)</h3>
-          <p>
-            Optimized blog content structure, improved snippet setup, and ensured sitemap submission/coverage
-            consistency in Search Console.
-          </p>
-          <div class="metric">
-            <div><span>Focus:</span> Content + Snippets</div>
-          </div>
-        </div>
 
-        <div class="card proj col4">
-          <div class="tagRow">
-            <span class="tag">Backlinks</span><span class="tag">Audit</span><span class="tag">Ahrefs</span>
+          <div class="card">
+            <p class="pill pill--small">WordPress • Content</p>
+            <h3 class="card__title">Fusion Certification (Content SEO)</h3>
+            <p>Improved blog structure, snippet setup, internal linking basics, and ensured sitemap submission is healthy.</p>
+            <p class="muted small"><strong>Focus:</strong> Content + Snippets</p>
           </div>
-          <h3>Backlink Audit & Clean-up</h3>
-          <p>
-            Reviewed backlink patterns, identified spammy sources, and prepared action lists for removal/disavow
-            planning (brand-safe approach).
-          </p>
-          <div class="metric">
-            <div><span>Focus:</span> Risk Reduction</div>
+
+          <div class="card">
+            <p class="pill pill--small">Ahrefs • Backlinks</p>
+            <h3 class="card__title">Backlink Audit & Clean-up</h3>
+            <p>Reviewed backlink patterns, identified spam sources, prepared a safe clean-up plan (remove/disavow planning).</p>
+            <p class="muted small"><strong>Focus:</strong> Risk reduction</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- RESULTS -->
-    <div class="grid section" id="results">
-      <div class="card box col8">
-        <div class="sectionHeader">
-          <h2>What I can show (data-ready)</h2>
-          <div class="hint">Use your screenshots + exports</div>
+    <section id="results" class="section section--alt">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Results</h2>
+          <p class="muted">Use your screenshots/export data here (GSC, indexing, on-page changes).</p>
         </div>
-        <ul class="list">
-          <li><b>Search Console:</b> clicks, impressions, CTR, position trends for key pages</li>
-          <li><b>Indexing:</b> sitemap submission, discovered pages, coverage fixes</li>
-          <li><b>On-page changes:</b> before/after titles, meta, internal linking updates</li>
-          <li><b>Backlink quality:</b> spam patterns and safe improvement plan</li>
-        </ul>
-      </div>
 
-      <div class="card box col4">
-        <div class="sectionHeader">
-          <h2>Available for</h2>
-          <div class="hint">Roles / work types</div>
-        </div>
-        <ul class="list">
-          <li>SEO Executive / Analyst</li>
-          <li>Digital Marketing Executive</li>
-          <li>E-commerce SEO Support</li>
-          <li>Freelance SEO (part-time)</li>
-        </ul>
-      </div>
-    </div>
+        <div class="grid2">
+          <div class="card">
+            <h3 class="card__title">SEO Proof I can share</h3>
+            <ul class="list">
+              <li>Search Console: clicks, impressions, CTR, position trends</li>
+              <li>Indexing: sitemap submission, discovered pages, coverage fixes</li>
+              <li>On-page: before/after titles/meta, internal linking updates</li>
+              <li>Backlinks: spam patterns + safe improvement plan</li>
+            </ul>
+          </div>
 
-    <!-- CONTACT -->
-    <div class="section" id="contact">
-      <div class="sectionHeader">
-        <h2>Contact</h2>
-        <div class="hint">Update these links before you share</div>
-      </div>
-
-      <div class="grid">
-        <div class="card box col12">
-          <p style="margin:0; color:var(--muted)">
-            Email is the fastest way to reach me. I can also share work samples/screenshots on request.
-          </p>
-          <div class="ctaRow" style="margin-top:14px;">
-            <a class="btn btnPrimary" href="mailto:yourmail@example.com">Email: yourmail@example.com</a>
-            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn Profile</a>
-            <a class="btn" href="#" onclick="alert('Add your phone number link here (WhatsApp optional).')">WhatsApp (optional)</a>
+          <div class="card">
+            <h3 class="card__title">Simple KPIs (add later)</h3>
+            <ul class="list">
+              <li><strong>Index coverage:</strong> e.g., errors reduced from X → Y</li>
+              <li><strong>CTR:</strong> improved on key pages</li>
+              <li><strong>Rank lift:</strong> target keywords moved up</li>
+              <li><strong>Leads:</strong> optional if you have data</li>
+            </ul>
+            <p class="muted small">You can keep this section “data-ready” until you upload GSC exports.</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="footer">
-      <div>© <span id="yr"></span> Jatin Kumar</div>
-      <div>
-        Built on GitHub Pages •
-        <a class="smallLink" href="#projects">Projects</a> •
-        <a class="smallLink" href="#contact">Contact</a>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p class="muted">Update these links before sharing your site.</p>
+        </div>
+
+        <div class="card contact">
+          <p>Email is the fastest way to reach me. I can also share screenshots/work samples on request.</p>
+          <div class="btnrow">
+            <a class="btn btn--primary" href="mailto:yourmail@example.com">Email</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="#" onclick="alert('Optional: add your WhatsApp link'); return false;">WhatsApp (optional)</a>
+          </div>
+          <p class="muted small">Replace: yourmail@example.com + LinkedIn URL.</p>
+        </div>
+
+        <footer class="footer">
+          <p>© <span id="y"></span> Jatin Kumar • Built on GitHub Pages</p>
+        </footer>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
